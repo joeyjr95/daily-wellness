@@ -1,0 +1,41 @@
+html { 
+    box-sizing: border-box;
+    scroll-behavior: smooth;    
+}
+
+.landing-page-topbar{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 500px;
+    list-style: none;   
+}
+
+.first-page{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.about-page{
+    display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.sign-up-page{
+    display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+footer{
+    display: flex;
+    align-items: column;
+    justify-content: space-evenly
+}
