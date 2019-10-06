@@ -1,0 +1,28 @@
+html { 
+    box-sizing: border-box;
+    scroll-behavior: smooth;    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav{
+  height: 100%; /* 100% Full-height */
+  display: flex;
+  position: fixed;
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  background-color: lightgrey;
+  overflow-x: hidden;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
