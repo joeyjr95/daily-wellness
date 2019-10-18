@@ -1,18 +1,29 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { NiceDate } from '../Utils/Utils'
+import moment from 'moment'
 
 export default class ReflectionListItem extends Component{
+  
     render(){
-        const {reflection} = this.props
+        
         return(
-            <Link to={`/reflection/${reflection.id}`} className='ReflectionListItem'>
+            <Link to={`/reflection/${this.props.id}`} className='ReflectionListItem'>
                 <header className='ReflectionListItem_header'>
-                    <ReflectionDate reflection={reflection}/>
+                  <h2> {moment(this.props.date_created).format('DD/MM/YYYY')} </h2>
                 </header>
                 <footer>
-                    <ReflectionMentalRating reflection={reflection}/>
-                    <ReflectionPhysicalRating reflection={reflection}/>
+                <span className='ReflectionListItem_mentalrating'>
+           <div> mental rating:  {this.props.mental_rating}  </div>
+        </span>
+        <span className='ReflectionListItem_mentalcontent'>
+           <div> mental content:  {this.props.mental_content}  </div>
+        </span>
+        <span className='ReflectionListItem_physicalrating'>
+            <div> physical rating:  {this.props.physical_rating} </div>
+        </span>
+        <span className='ReflectionListItem_physicalcontent'>
+           <div> physical content:  {this.props.physical_content}  </div>
+        </span>
                 </footer>
 
 
@@ -24,26 +35,3 @@ export default class ReflectionListItem extends Component{
 
 }
 
-function ReflectionDate({ reflection }) {
-    return (
-      <span className='ReflectionListItem__date'>
-        <NiceDate
-          date={reflection.date_created}
-        />
-      </span>
-    )
-  }
-function ReflectionMentalRating({reflection}){
-    return (
-        <span className='ReflectionListItem_mentalrating'>
-            {reflection.mental_rating}
-        </span>
-    )
-}
-function ReflectionPhysicalRating({reflection}){
-    return (
-        <span className='ReflectionListItem_physicalrating'>
-            {reflection.physical_rating}
-        </span>
-    )
-}

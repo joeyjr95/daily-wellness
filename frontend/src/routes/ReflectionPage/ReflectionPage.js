@@ -11,6 +11,7 @@ export default class ReflectionPage extends Component {
     static contextType = WellnessContext
 
     componentDidMount() {
+        console.log(this.props.match.params)
         const {reflectionId} = this.props.match.params
         this.context.clearError()
         WellnessApiService.getReflection(reflectionId)

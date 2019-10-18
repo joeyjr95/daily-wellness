@@ -1,29 +1,33 @@
 import React, { Component } from 'react'
 import WellnessContext from '../../contexts/WellnessContext'
+import TokenService from '../../services/token-service'
 import WellnessApiService from '../../services/wellness-api-service'
-import { Button } from '../Utils/Utils'
+import jwtDecode from 'jwt-decode'
+
 
 export default class ReflectionForm extends Component {
-    static defaultProps = {
-        onFormSuccess: () => {}
-      }
+    static defaultProps ={
+        handleClick: () => {}
+    }
 
     static contextType = WellnessContext
 
     handleSubmit = e => {
         e.preventDefault()
+        console.log(this.context.user)
         const reflection = {
-            user_id: this.context.user,
+            user_id: jwtDecode(TokenService.getAuthToken()).user_id,
             physical_rating: Number(e.target['physical_rating'].value),
             physical_content: e.target['physical_content'].value,
             mental_rating: Number(e.target['mental_rating'].value),
             mental_content: e.target['mental_content'].value,
         }
         WellnessApiService.postReflection(reflection)
-            .then(this.context.addReflection,
-                  this.props.onFormSuccess())
+            .then(this.context.addReflection)
+            .then(this.props.handleClick())
             .catch(this.context.setError)
     }
+    
 
     render() {
 
@@ -56,9 +60,9 @@ export default class ReflectionForm extends Component {
            <div> 
            <textarea name="physical_content" id="physical_content" rows="10" cols="30">explain your physical rating</textarea> 
            </div>
-           <Button type='submit'>
+           <button type='submit'>
           Submit Reflection
-        </Button>
+        </button>
          </form>
 
         </>

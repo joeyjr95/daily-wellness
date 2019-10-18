@@ -9,6 +9,7 @@ authRouter
   .post('/login', jsonBodyParser, (req, res, next) => {
     const { user_name, password } = req.body;
     const loginUser = { user_name, password };
+    console.log(loginUser);
 
     for (const [key, value] of Object.entries(loginUser))
       if (value == null)
@@ -18,7 +19,8 @@ authRouter
 
     AuthService.getUserWithUserName(
       req.app.get('db'),
-      loginUser.user_name
+      loginUser.user_name,
+      loginUser.id
     )
       .then(dbUser => {
         if (!dbUser)
@@ -34,7 +36,8 @@ authRouter
               });
 
             const sub = dbUser.user_name;
-            const payload = { user_id: dbUser.id };
+            const payload = { user_id: dbUser.id, user_name: dbUser.user_name, full_name: dbUser.full_name};
+            
             res.send({
               authToken: AuthService.createJwt(sub, payload),
             });

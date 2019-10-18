@@ -1,12 +1,13 @@
 const reflectionsService = {
-  getAllReflections(knex) {
-    return knex.select('*').from('reflections');
+  getAllReflections(knex, userId) {
+    return knex.from('reflections').select('reflections.id','reflections.user_id',  'reflections.physical_rating', 'reflections.physical_content','reflections.mental_rating', 'reflections.mental_content', 'reflections.date_created').join('users', {'reflections.user_id':'users.id'}).where('users.id',userId ).groupBy('reflections.id', 'reflections.user_id', 'reflections.physical_rating', 'reflections.physical_content','reflections.mental_rating', 'reflections.mental_content', 'reflections.date_created');
   },
-  insertReflections(knex, newReflection) {
+  insertReflections(knex,userId, newReflection) {
     return knex
       .insert(newReflection)
       .into('reflections')
       .returning('*')
+      .where('reflections.user_id',userId )
       .then(rows => {
         return rows[0];
       });

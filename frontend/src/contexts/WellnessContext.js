@@ -4,8 +4,10 @@ import React, { Component } from 'react'
 
       const WellnessContext = React.createContext({
         error: null,
-        user: null,
+        user: {},
+        averages: [],
         reflections: [],
+        reflection: null,
         loading: false,
         setUser: () => {},
         setError: () => {},
@@ -19,7 +21,8 @@ import React, { Component } from 'react'
       export class WellnessProvider extends Component {
         state = {
           error: null,
-          user: null,
+          user: {},
+          averages: [],
           reflection: null,
           reflections: [],
           loading: false,
@@ -36,6 +39,9 @@ import React, { Component } from 'react'
       
         setUser = user => {
           this.setState({ user })
+        }
+        setAverages = averages => {
+          this.setState({ averages })
         }
       
         setReflections = reflections => {
@@ -58,6 +64,7 @@ import React, { Component } from 'react'
           const value = {
             user: this.state.user,
             reflection: this.state.reflection,
+            averages: this.state.averages,
             reflections: this.state.reflections,
             error: this.state.error,
             setError: this.setError,

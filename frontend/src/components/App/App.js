@@ -1,7 +1,9 @@
-import React, {Component} from 'react';
-import {Route, Switch} from 'react-router-dom';
-import Header from '../Header/Header';
-import NotFoundPage from '../NotFoundPage/NotFoundPage';
+import React, {Component} from 'react'
+import {Route, Switch} from 'react-router-dom'
+import Header from '../Header/Header'
+import PrivateRoute from '../Utils/PrivateRoute'
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
+import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import LandingPage from '../../routes/LandingPage/LandingPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import ReflectionListPage from '../../routes/ReflectionListPage/ReflectionListPage'
@@ -13,34 +15,35 @@ class App extends Component {
  
   render() {
     return (
+    
       <div className='App'>
         <header className='App__header'>
           <Header />
         </header>
         <main className='App__main'>
           <Switch>
-            <Route
+            <PublicOnlyRoute
               exact
               path={'/'}
               component={LandingPage}
             />
-            <Route
+            <PublicOnlyRoute
               path={'/login'}
               component={LoginPage}
             />
-            <Route
+            <PrivateRoute
               path={'/home'}
               component={HomePage}
             />
-            <Route
+            <PrivateRoute
               path={'/form'}
               component={FormPage}
             />
-            <Route
+            <PrivateRoute
               path={'/reflections'}
               component={ReflectionListPage}
             />
-            <Route
+            <PrivateRoute
               path={'/reflection/:reflectionId'}
               component={ReflectionPage}
             />

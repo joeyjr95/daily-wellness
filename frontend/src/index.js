@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './components/App/App';
+import {WellnessProvider} from './contexts/WellnessContext'
 
 ReactDOM.render(
+   <WellnessProvider> 
     <BrowserRouter>
         <App />
-    </BrowserRouter>, 
+    </BrowserRouter>
+    </WellnessProvider>, 
     document.getElementById('root')
 );

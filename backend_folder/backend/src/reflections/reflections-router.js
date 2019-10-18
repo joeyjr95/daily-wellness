@@ -3,7 +3,9 @@ const express = require('express');
 const xss = require('xss');
 const logger = require('../logger');
 const reflectionsService = require('./reflections-service');
+const {requireAuth} = require('../middleware/jwt-auth');
 const reflectionsRouter = express.Router();
+const bodyParser = express.json();
 
 const serializeReflection = reflection => ({ 
   id: reflection.id,
@@ -17,27 +19,34 @@ const serializeReflection = reflection => ({
 
 reflectionsRouter
   .route('/')
+  .all(requireAuth)
   .get((req,res,next)=> {
     const knexInstance = req.app.get('db');
-    reflectionsService.getAllReflections(knexInstance)
+    const userId = req.user.id;
+    reflectionsService.getAllReflections(knexInstance, userId)
       .then(reflections => {
         console.log(reflections);
-        res.json(reflections.map(serializeReflection));
+        res.json(reflections);
       })
       .catch(next);
   })
-  .post((req, res, next) => {
-    const { physical_rating,
+  .post(bodyParser,(req, res, next) => {
+    console.log(req.body);
+    const userId = req.user.id;
+    const { user_id,
+      physical_rating,
       physical_content,
       mental_rating,
       mental_content, 
     } = req.body;
     const newReflection = {
+      user_id,
       physical_rating,
       physical_content,
       mental_rating,
       mental_content,
     };
+    console.log(newReflection);
     for (const [key, value] of Object.entries(newReflection)) {
       if (value == null) {
         return res.status(400).json({
@@ -47,6 +56,7 @@ reflectionsRouter
     }
     reflectionsService.insertReflections(
       req.app.get('db'),
+      userId,
       newReflection
     )
       .then(reflection => {
@@ -80,7 +90,7 @@ reflectionsRouter
   .get((req, res, next) => {
     res.json(serializeReflection(res.reflection));
   })
-  .delete(( req, res, next ) => {
+  .delete(bodyParser,( req, res, next ) => {
   
     reflectionsService.deleteReflection(
       req.app.get('db'),
@@ -91,7 +101,7 @@ reflectionsRouter
       })
       .catch(next);
   })
-  .patch((req, res, next) => {
+  .patch(bodyParser,(req, res, next) => {
     const {
       physical_rating,
       physical_content,

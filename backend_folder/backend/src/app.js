@@ -7,7 +7,9 @@ const helmet = require('helmet');
 const { NODE_ENV } = require('./config');
 const authRouter = require('./auth/auth-router');
 const usersRouter = require('./users/users-router');
+const userRouter = require('./user/user-router');
 const reflectionsRouter = require('./reflections/reflections-router');
+const averageRouter = require('./average/average-router');
 
 
 const app = express();
@@ -20,7 +22,9 @@ app.use(helmet());
 
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/user',userRouter);
 app.use('/api/reflections', reflectionsRouter);
+app.use('/api/averages', averageRouter);
 
 app.use(function errorHandler(error, req, res, next){
   let response;

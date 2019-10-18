@@ -19,7 +19,11 @@ export default class ReflectionListPage extends Component {
         return reflections.map( reflection =>
             <ReflectionListItem
                 key={reflection.id}
-                reflection={reflection}
+                date_created={reflection.date_created}
+                mental_rating={reflection.mental_rating}
+                mental_content={reflection.mental_content}
+                physical_rating={reflection.physical_rating}
+                physical_content={reflection.physical_content}
             />
         )
     }
