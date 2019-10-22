@@ -15,7 +15,7 @@ a{
     text-decoration: none;
 }
 a:hover{
-    color: #0C0E40;
+    color: #FFD730;
 }
 .Header__Landing{
     display: flex;
@@ -25,3 +25,4 @@ a:hover{
      
 
 }
+
