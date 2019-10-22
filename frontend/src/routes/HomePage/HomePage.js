@@ -26,7 +26,9 @@ export default class HomePage extends Component {
             .catch(this.context.setError)
     }
     renderChart(){
-        let reflections = this.context.reflections
+
+    
+        let reflections = localStorage.reflections
         console.log(reflections)
         
         const mentalReflections = reflections.map( reflection => [{ x: moment(reflection.date_created).format('MM/DD/YYYY') , y: reflection.mental_rating }])

@@ -72,6 +72,7 @@ import TokenService from '../services/token-service'
         }
       
         setReflections = reflections => {
+          localStorage.setItem('reflections', JSON.stringify(reflections) )
           this.setState({ reflections })
         }
         setReflection = reflection => {
