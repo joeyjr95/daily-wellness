@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import WellnessApiService from '../services/wellness-api-service'
 
 
 
@@ -9,11 +10,17 @@ import React, { Component } from 'react'
         reflections: [],
         reflection: null,
         loading: false,
+        loggedIn: false,
         setUser: () => {},
         setError: () => {},
-        clearError: () => { },
+        clearError: () => {},
         setReflections: () => {},
+        setAverages: () => {},
         addReflection: () => {},
+        overallAverage: () => {},
+        handleDeleteReflection: () => {},
+        handleLoginClick: () => {},
+        handleLogoutClick: () => {},
       })
       
       export default WellnessContext
@@ -26,7 +33,15 @@ import React, { Component } from 'react'
           reflection: null,
           reflections: [],
           loading: false,
+          loggedIn: false,
         };
+        handleLoginClick = () =>{
+          this.setState({loggedIn: true})
+        }
+        handleLogoutClick = () =>{
+          localStorage.clear("wellness-client-auth-token")
+          this.setState({loggedIn: false})
+        }
       
         setError = error => {
           console.error(error)
@@ -59,6 +74,20 @@ import React, { Component } from 'react'
             reflection
           ])
         }
+        overallAverage = average => {
+          return (Number(average.average_mental) + Number(average.average_physical))/2
+        }
+        handleDeleteReflection = reflectionId => {
+          WellnessApiService.deleteReflection(reflectionId)
+          .then(() => {
+            this.setState({
+              reflections: this.state.reflections.filter(reflection => reflection.id !== reflectionId)
+          })
+          })
+          .catch(err => {
+            this.setError(err)
+          })
+      };
       
         render() {
           const value = {
@@ -70,10 +99,16 @@ import React, { Component } from 'react'
             setError: this.setError,
             clearError: this.clearError,
             setUser: this.setUser,
+            setAverages: this.setAverages,
+            loggedIn: this.state.loggedIn,
+            handleLoginClick: this.handleLoginClick,
+            handleLogoutClick: this.handleLogoutClick,
             setReflections: this.setReflections,
             setReflection: this.setReflection,
             addReflection: this.addReflection,
-            clearReflection: this.clearReflection
+            clearReflection: this.clearReflection,
+            overallAverage: this.overallAverage,
+            handleDeleteReflection: this.handleDeleteReflection,
           }
           return (
             <WellnessContext.Provider value={value}>

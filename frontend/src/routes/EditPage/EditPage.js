@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import ReflectionForm from '../../components/ReflectionForm/ReflectionForm'
+import EditForm from '../../components/EditForm/EditForm'
 import { Section } from '../../components/Utils/Utils'
-import './FormPage.css'
 
 export default class FormPage extends Component {
   handleClick = () => {
@@ -11,7 +10,7 @@ export default class FormPage extends Component {
     return (
       <Section className='FormPage'>
         <h2>Welcome Back!</h2>
-        <ReflectionForm
+        <EditForm
             handleClick ={this.handleClick}
         />
       </Section>

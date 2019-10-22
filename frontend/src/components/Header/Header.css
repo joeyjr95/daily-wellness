@@ -1,0 +1,27 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #4a50ff;
+    border-bottom: .5px solid white;
+    
+}
+h1{
+    margin-left: 1vw;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: #0C0E40;
+}
+.Header__Landing{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 500px;
+     
+
+}

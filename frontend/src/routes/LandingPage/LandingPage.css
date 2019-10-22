@@ -1,0 +1,85 @@
+.LandingPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.first-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 92vh;
+    width: 100%;
+    background-image: url("https://i.imgur.com/pJlVTh6.jpg");
+    background-color: grey;
+  background-blend-mode: multiply;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+
+}
+.first-page h2{
+    margin-top: 20vh;
+    height: 12vh;
+    font-size: 9vw;
+}
+.first-page h3{
+    margin-top: 10vh;
+    height: 20vh;
+    font-size: 1.8vw;
+}
+.first-page a{
+    height: 10vh;
+    font-size: 1.5vw;
+}
+.first-page a:hover{
+    color: #FFD730;
+}
+
+.about-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+.RegistrationPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+}
+
+
+.RegistrationForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8vh;
+    border: 2px solid white;
+    height: 70vh;
+    width: 75vw;
+}
+.Input{
+    border: 1px solid white;
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    border-radius: 4px;
+  }
+.full_name{
+    margin-top: 2.5vh;
+}
+button{
+    margin-top: 1vh;
+}
+.contact-info{
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import { Section } from '../../components/Utils/Utils'
+import WellnessContext from '../../contexts/WellnessContext'
+import './LoginPage.css'
 
 export default class LoginPage extends Component {
+  static contextType = WellnessContext
+
   static defaultProps = {
     location: {},
     history: {
@@ -13,6 +17,7 @@ export default class LoginPage extends Component {
   handleLoginSuccess = () => {
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/home'
+    this.context.handleLoginClick()
     history.push(destination)
   }
 

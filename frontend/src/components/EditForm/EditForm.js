@@ -4,11 +4,7 @@ import TokenService from '../../services/token-service'
 import WellnessApiService from '../../services/wellness-api-service'
 import jwtDecode from 'jwt-decode'
 
-
-export default class ReflectionForm extends Component {
-    static defaultProps ={
-        handleClick: () => {}
-    }
+export default class EditForm extends Component {
 
     static contextType = WellnessContext
 
@@ -22,7 +18,7 @@ export default class ReflectionForm extends Component {
             mental_rating: Number(e.target['mental_rating'].value),
             mental_content: e.target['mental_content'].value,
         }
-        WellnessApiService.postReflection(reflection)
+        WellnessApiService.patchReflection(reflection)
             .then(this.context.addReflection)
             .then(this.props.handleClick())
             .catch(this.context.setError)
@@ -61,12 +57,11 @@ export default class ReflectionForm extends Component {
            <textarea name="physical_content" id="physical_content" rows="10" cols="30" placeholder="leave a description here!"></textarea> 
            </div>
            <button type='submit'>
-          Submit Reflection
+          Edit Reflection
         </button>
          </form>
 
         </>
         )
     }
-
 }

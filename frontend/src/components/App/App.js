@@ -7,9 +7,10 @@ import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import LandingPage from '../../routes/LandingPage/LandingPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import ReflectionListPage from '../../routes/ReflectionListPage/ReflectionListPage'
-import ReflectionPage from '../../routes/ReflectionPage/ReflectionPage'
+import EditPage from '../../routes/EditPage/EditPage'
 import FormPage from '../../routes/FormPage/FormPage'
-import HomePage from '../HomePage/HomePage'
+import HomePage from '../../routes/HomePage/HomePage'
+import './App.css'
 
 class App extends Component {
  
@@ -44,9 +45,10 @@ class App extends Component {
               component={ReflectionListPage}
             />
             <PrivateRoute
-              path={'/reflection/:reflectionId'}
-              component={ReflectionPage}
+              path={'/edit'}
+              component={EditPage}
             />
+    
             <Route
               component={NotFoundPage}
             />
