@@ -6,6 +6,9 @@ import ReflectionListItem from '../../components/ReflectionListItem/ReflectionLi
 
 export default class ReflectionListPage extends Component {
     static contextType = WellnessContext
+    handleClickEdit = () => {
+        this.props.history.push(`/edit`)
+      }
 
     componentDidMount() {
         this.context.clearError()
@@ -25,6 +28,7 @@ export default class ReflectionListPage extends Component {
                 mental_content={reflection.mental_content}
                 physical_rating={reflection.physical_rating}
                 physical_content={reflection.physical_content}
+                handleClickEdit={this.handleClickEdit}
             />
         )
     }

@@ -5,10 +5,18 @@ import WellnessContext from '../../contexts/WellnessContext'
 
 export default class ReflectionListItem extends Component{
     static contextType = WellnessContext
+    static defaultProps ={
+        handleClickEdit: () => {}
+    }
 
     handleDelete = e =>{
                 this.context.handleDeleteReflection(this.props.id)
            
+    }
+    handleEdit = e =>{
+        this.context.setReflection(this.props)
+        this.props.handleClickEdit()
+        
     }
   
     render(){
@@ -16,7 +24,7 @@ export default class ReflectionListItem extends Component{
         return(
             <div className='ReflectionListItem'>
                 <header className='ReflectionListItem_header'>
-                  <h2> {moment(this.props.date_created).format('DD/MM/YYYY')} </h2>
+                  <h2> {moment(this.props.date_created).format('MM/DD/YYYY')} </h2>
                 </header>
                 <span className='ReflectionListItem_mentalrating'>
            <div> mental rating:  {this.props.mental_rating}  </div>
@@ -34,7 +42,7 @@ export default class ReflectionListItem extends Component{
             <button onClick={this.handleDelete}>
                 Delete
             </button>
-            <button>
+            <button onClick={this.handleEdit}>
                 Edit
             </button>
 

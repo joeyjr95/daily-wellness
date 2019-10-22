@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import WellnessApiService from '../services/wellness-api-service'
+import TokenService from '../services/token-service'
 
 
 
@@ -8,13 +9,15 @@ import WellnessApiService from '../services/wellness-api-service'
         user: {},
         averages: [],
         reflections: [],
-        reflection: null,
+        reflection: {},
         loading: false,
         loggedIn: false,
         setUser: () => {},
         setError: () => {},
         clearError: () => {},
+        clearReflections: () => {},
         setReflections: () => {},
+        setReflection: () => {},
         setAverages: () => {},
         addReflection: () => {},
         overallAverage: () => {},
@@ -26,15 +29,21 @@ import WellnessApiService from '../services/wellness-api-service'
       export default WellnessContext
       
       export class WellnessProvider extends Component {
+        componentDidMount (){
+          if(TokenService.hasAuthToken){
+            this.setState({loggedIn: true})
+          }
+        }
         state = {
           error: null,
           user: {},
           averages: [],
-          reflection: null,
+          reflection: {},
           reflections: [],
           loading: false,
           loggedIn: false,
         };
+
         handleLoginClick = () =>{
           this.setState({loggedIn: true})
         }
@@ -51,6 +60,9 @@ import WellnessApiService from '../services/wellness-api-service'
         clearError = () => {
           this.setState({ error: null })
         }
+        clearReflections = () => {
+          this.setReflections([])
+        }
       
         setUser = user => {
           this.setState({ user })
@@ -63,6 +75,7 @@ import WellnessApiService from '../services/wellness-api-service'
           this.setState({ reflections })
         }
         setReflection = reflection => {
+          localStorage.setItem('reflection', JSON.stringify(reflection) )
           this.setState({ reflection })
         }
         clearReflection = () => {
@@ -107,6 +120,7 @@ import WellnessApiService from '../services/wellness-api-service'
             setReflection: this.setReflection,
             addReflection: this.addReflection,
             clearReflection: this.clearReflection,
+            clearReflections: this.clearReflections,
             overallAverage: this.overallAverage,
             handleDeleteReflection: this.handleDeleteReflection,
           }

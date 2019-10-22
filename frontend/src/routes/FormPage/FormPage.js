@@ -7,6 +7,7 @@ export default class FormPage extends Component {
   handleClick = () => {
     this.props.history.push(`/reflections`)
   }
+  
   render() {
     return (
       <Section className='FormPage'>

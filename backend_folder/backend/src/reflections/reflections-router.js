@@ -71,6 +71,7 @@ reflectionsRouter
   });
 reflectionsRouter
   .route('/:id')
+  .all(requireAuth)
   .all((req, res, next) => {
     const knexInstance = req.app.get('db');
     reflectionsService.getById(knexInstance, req.params.id)
@@ -90,7 +91,7 @@ reflectionsRouter
   .get((req, res, next) => {
     res.json(serializeReflection(res.reflection));
   })
-  .delete(bodyParser,( req, res, next ) => {
+  .delete(( req, res, next ) => {
   
     reflectionsService.deleteReflection(
       req.app.get('db'),
@@ -103,11 +104,15 @@ reflectionsRouter
   })
   .patch(bodyParser,(req, res, next) => {
     const {
+      id,
+      user_id,
       physical_rating,
       physical_content,
       mental_rating,
       mental_content,} = req.body;
     const reflectionToUpdate = {
+      id,
+      user_id,
       physical_rating,
       physical_content,
       mental_rating,

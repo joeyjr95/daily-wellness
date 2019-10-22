@@ -3,6 +3,8 @@
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -11,7 +13,7 @@ body {
   font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1116B3;
+  background-color: rgb(41, 46, 182);
   color: white;
 }
 

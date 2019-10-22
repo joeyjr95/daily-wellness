@@ -68,7 +68,7 @@ const WellnessApiService = {
     })
   },
   patchReflection(reflection) {
-    return fetch(`${config.API_ENDPOINT}/api/reflections/${reflection}`, {
+    return fetch(`${config.API_ENDPOINT}/api/reflections/${reflection.id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
@@ -76,9 +76,9 @@ const WellnessApiService = {
       },
       body: JSON.stringify(reflection),
     })
-    .then( res => (!res.ok)
-      ? res.json().then(e => Promise.reject(e))
-      : res.json());
+    .catch(err => {
+      this.setError(err)
+    })
   },
 }
 

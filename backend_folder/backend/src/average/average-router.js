@@ -10,10 +10,12 @@ averageRouter
     const knexInstance = req.app.get('db');
     const userId = req.user.id;
     averageService.getAvg(knexInstance, userId)
-      .then(average => {
-        res.json(average);
+      .then(averages => {
+        res.json(averages);
+        console.log(averages);
       })
       .catch(next);
+      
   });
 
 module.exports = averageRouter;
