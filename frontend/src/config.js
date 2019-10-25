@@ -1,4 +1,4 @@
 export default {
-  API_ENDPOINT: 'http://localhost:8000',
+  API_ENDPOINT: 'https://cryptic-hollows-94743.herokuapp.com',
   TOKEN_KEY: 'wellness-client-auth-token',
 }
