@@ -9,33 +9,34 @@
 }
 #userGreeting{
     margin-top: 8vh;
-    font-size: 2vw;
+    font-size: 6vw;
     
 }
 .data{
-    margin-top: 9vh;
+    margin-top: 0vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
+    padding-bottom: 0px;
 }
-
-.dailyChart {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
+.dailyChart{
+    display: none;
 }
 .dailyChart p{
     margin-top: 1%;
+    text-align: center;
 }
-.pieChart{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* .pieChart{
+    display: none;
+} */
+.pieChart p{
+    display: none;
 }
+
 .averages h3{
-    margin-top: 10vh;
+    margin-top: 2vh;
 }
 .links{
     margin-top: 7vh;
@@ -44,6 +45,12 @@
 
 @media screen and (min-width: 750px){
 
+    #userGreeting{
+        margin-top: 8vh;
+        font-size: 2vw;
+        
+    }
+
     .data{
         margin-top: 7vh;
         display: flex;
@@ -51,6 +58,29 @@
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
+        padding-bottom: 0px;
+    }
+    .pieChart{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: initial;
+        text-align: center;
+    }
+    .pieChart p{
+        display:initial;
+    }
+    .dailyChart {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+    .dailyChart p{
+        margin-top: 1%;
+        font-size: initial;
+    }
+    .averages h3{
+        margin-top: 10vh;
     }
 
 }

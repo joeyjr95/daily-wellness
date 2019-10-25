@@ -9,16 +9,18 @@
     flex-direction: column;
     align-items: center;
 }
-
+.ReflectionList{
+    display: flex;
+    flex-direction: column;
+}
 .ReflectionListItem{
   margin-left: auto;
   margin-right: auto;
-  list-style: none;
   border: 1px solid white;
   font-size: 1.1em;
   margin-bottom: 3vh;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-bottom: 10px;
   text-align: center;
   width: 300px;
@@ -29,4 +31,26 @@
 .buttons{
     display: flex;
     flex-direction: column;
+    
+}
+.buttons button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+    outline: inherit;
+    padding-bottom: 2px;
+}
+.buttons button:hover{
+    color: #FFD730;
+  }
+
+@media screen and (min-width: 750px){
+
+  .ReflectionList{
+    display: flex;
+    flex-direction: row;
+}
+
 }

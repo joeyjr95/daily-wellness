@@ -58,20 +58,21 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-image: url("https://i.imgur.com/pJlVTh6.jpg");
-    background-color: rgb(156, 156, 156);
+    background-image: url("https://i.imgur.com/UmYRVBp.jpg");
+  background-color: rgb(156, 156, 156);
   background-blend-mode: multiply;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    padding-top: 10vh;
     
 
 }
 .first-page h2{
     margin-top: 20vh;
     height: 12vh;
-    font-size: 9vw;
+    font-size: 13vw;
     animation: fadeIn ease 7s;
     -webkit-animation: fadeIn ease 7s;
     -moz-animation: fadeIn ease 7s;
@@ -83,7 +84,7 @@
 .first-page h3{
     margin-top: 10vh;
     height: 20vh;
-    font-size: 1.8vw;
+    font-size: 4vw;
     animation: fadeIn ease 7s;
     -webkit-animation: fadeIn ease 7s;
     -moz-animation: fadeIn ease 7s;
@@ -92,7 +93,7 @@
 }
 .first-page a{
     height: 10vh;
-    font-size: 1.5vw;
+    font-size: 4.5vw;
     animation: fadeIn ease 7s;
     -webkit-animation: fadeIn ease 7s;
     -moz-animation: fadeIn ease 7s;
@@ -106,38 +107,8 @@
     
 }
 .aboutPageInfo img{
-  height: 399.2px;
-  width: 766.8px;
-  border: 1px solid white;
-}
-.aboutPageInfo{
-  display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5vh;
-    padding-left: 30px;
-  padding-right: 30px; 
-}
-#profile{
-  display: flex;
-  flex-direction: row;
-  padding-left: 5%;
-}
-#profile p{
-  display: flex;
-  margin-right: 5%;
-  align-items: flex-start;
-}
-#form{
-  display: flex;
-  flex-direction: row;
-  padding-right: 5%;
-  margin-top: 8vh;
-}
-#form p{
-  display: flex;
-  margin-left: 5%;
-  align-items: flex-start;
+  display: none;
+
 }
 
 
@@ -147,7 +118,15 @@
     align-items: center;
     height: 90vh;
 }
-
+.aboutPageInfo{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    padding-left: 40px;
+  padding-right: 40px; 
+  padding-bottom: 20px;
+}
 
 .RegistrationForm {
     display: flex;
@@ -168,4 +147,62 @@ button{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-left: 20px;
+  padding-right: 20px; 
+}
+
+@media screen and (min-width: 750px){
+  .first-page{
+  background-image: url("https://i.imgur.com/pJlVTh6.jpg");
+  background-color: rgb(156, 156, 156);
+  padding-top: 0vh;
+  }
+
+.first-page a{
+  font-size: 1.5vw;
+  
+    }
+.first-page h2{
+  font-size: 9vw;
+}
+.first-page h3{
+  font-size: 1.8vw;
+}
+
+  .aboutPageInfo img{
+    display: flex;
+    height: 399.2px;
+    width: 766.8px;
+    border: 1px solid white;
+  }
+  .aboutPageInfo{
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5vh;
+      padding-left: 30px;
+    padding-right: 30px; 
+    padding-bottom: 0px;
+  }
+  #profile{
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+  }
+  #profile p{
+    display: flex;
+    margin-right: 5%;
+    align-items: flex-start;
+  }
+  #form{
+    display: flex;
+    flex-direction: row;
+    padding-right: 5%;
+    margin-top: 8vh;
+  }
+  #form p{
+    display: flex;
+    margin-left: 5%;
+    align-items: flex-start;
+  }
 }

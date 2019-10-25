@@ -107,12 +107,12 @@ export default class HomePage extends Component {
             
     return (
         <>
-        <section className='averages'>
+        <div className='averages'>
             <h3>Your Averages</h3>
             <p>Overall Health: {Number(overallAvg).toFixed(1)} </p>
             <p>Mental Health: {Number(average.average_mental).toFixed(1)}</p>
             <p>Physical Health:{Number(average.average_physical).toFixed(1)}</p>
-        </section>
+        </div>
         </>
     )
     }

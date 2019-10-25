@@ -26,11 +26,13 @@ button {
     border-radius: 4px;
     padding: 8px 12px;
     font-weight: bold;
+    cursor: pointer;
   
 }
 a{
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 a:hover{
   color: #FFD730;
