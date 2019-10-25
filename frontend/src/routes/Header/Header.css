@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+
 .Header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.flexBody{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -8,25 +15,17 @@
     border-bottom: .5px solid white;
     
 }
-h1{
-    margin-left: 1vw;
+.logo{
     font-family: 'Sacramento', cursive;
     font-weight: 100;
+    margin-left: 1.5vw;
 }
-a{
-    color: white;
-    text-decoration: none;
-    margin-right: 1vw;
-}
-a:hover{
-    color: #FFD730;
-}
+
 .Header__Landing{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    width: 500px;
-     
+    justify-content: space-around;
+    width: 200px;
 
 }
 

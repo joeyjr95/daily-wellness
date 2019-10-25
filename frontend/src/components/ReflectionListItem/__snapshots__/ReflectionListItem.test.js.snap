@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReflectionListItem component renders a ReflectionListItem by default 1`] = `
+<div
+  className="ReflectionListItem"
+>
+  <header
+    className="ReflectionListItem_header"
+  >
+    <h2>
+       
+      10/23/2019
+       
+    </h2>
+  </header>
+  <span
+    className="ReflectionListItem_mentalrating"
+  >
+    <div>
+       mental rating:  
+        
+    </div>
+  </span>
+  <span
+    className="ReflectionListItem_mentalcontent"
+  >
+    <div>
+       mental content:  
+        
+    </div>
+  </span>
+  <span
+    className="ReflectionListItem_physicalrating"
+  >
+    <div>
+       physical rating:  
+       
+    </div>
+  </span>
+  <span
+    className="ReflectionListItem_physicalcontent"
+  >
+    <div>
+       physical content:  
+        
+    </div>
+  </span>
+  <button
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Edit
+  </button>
+</div>
+`;
+
+exports[`ReflectionListItem component renders the ReflectionListItem given props 1`] = `
+<div
+  className="ReflectionListItem"
+>
+  <header
+    className="ReflectionListItem_header"
+  >
+    <h2>
+       
+      08/15/2018
+       
+    </h2>
+  </header>
+  <span
+    className="ReflectionListItem_mentalrating"
+  >
+    <div>
+       mental rating:  
+      5
+        
+    </div>
+  </span>
+  <span
+    className="ReflectionListItem_mentalcontent"
+  >
+    <div>
+       mental content:  
+      stuff
+        
+    </div>
+  </span>
+  <span
+    className="ReflectionListItem_physicalrating"
+  >
+    <div>
+       physical rating:  
+      2
+       
+    </div>
+  </span>
+  <span
+    className="ReflectionListItem_physicalcontent"
+  >
+    <div>
+       physical content:  
+      stuff
+        
+    </div>
+  </span>
+  <button
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Edit
+  </button>
+</div>
+`;

@@ -10,7 +10,7 @@ export default class ReflectionListItem extends Component{
     }
 
     handleDelete = e =>{
-                this.context.handleDeleteReflection(this.props.id)
+        this.context.handleDeleteReflection(this.props.id)
            
     }
     handleEdit = e =>{
@@ -22,7 +22,7 @@ export default class ReflectionListItem extends Component{
     render(){
         
         return(
-            <div className='ReflectionListItem'>
+            <div >
                 <header className='ReflectionListItem_header'>
                   <h2> {moment(this.props.date_created).format('MM/DD/YYYY')} </h2>
                 </header>
@@ -30,21 +30,24 @@ export default class ReflectionListItem extends Component{
            <div> mental rating:  {this.props.mental_rating}  </div>
         </span>
         <span className='ReflectionListItem_mentalcontent'>
-           <div> mental content:  {this.props.mental_content}  </div>
+           <div> mental content:</div>
+           <p>{this.props.mental_content}</p>
         </span>
         <span className='ReflectionListItem_physicalrating'>
             <div> physical rating:  {this.props.physical_rating} </div>
         </span>
         <span className='ReflectionListItem_physicalcontent'>
-           <div> physical content:  {this.props.physical_content}  </div>
+           <div> physical content:  </div>
+           <p>{this.props.physical_content}</p>
         </span>
-            
+            <div className="buttons">
             <button onClick={this.handleDelete}>
                 Delete
             </button>
-            <button onClick={this.handleEdit}>
+            <button onClick={this.handleEdit}>  
                 Edit
             </button>
+            </div>
 
 
             </div>

@@ -10,9 +10,10 @@ export default class Header extends Component {
     renderLoginLink() {
         return (
           <div className='Header__Landing'>
-            <a href="#registration">
-            Sign Up
-        </a>
+           <Link
+              to='/register'>
+              Sign up
+            </Link>
             <Link
               to='/login'>
               Log in
@@ -24,7 +25,14 @@ export default class Header extends Component {
       this.context.handleLogoutClick()
     }
     renderLogoutLink() {
-    return <Link to="/" onClick={this.logout}>Log Out</Link>
+    return (<div className='Header__Landing'>
+      <Link to='/'>
+                    Home
+                  </Link>
+    
+    <Link to="/" onClick={this.logout}>Log Out</Link>
+    </div>
+    )
   }
       render() {
         const loggedIn = this.context.loggedIn
@@ -37,14 +45,15 @@ export default class Header extends Component {
 
         return (
           <nav className='Header'>
-            <h1>
-              <Link to='/'>
-                How You Doin?
-              </Link>
-            </h1>
-        
-           {button}
-
+            <div className="flexBody">
+                <h1 className="logo">
+                  <Link to='/'>
+                    How You Doin?
+                  </Link>
+                </h1>
+                
+              {button}
+           </div>
           </nav>
         )
       }

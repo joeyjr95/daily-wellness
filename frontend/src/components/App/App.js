@@ -1,15 +1,16 @@
 import React, {Component} from 'react'
 import {Route, Switch} from 'react-router-dom'
-import Header from '../Header/Header'
+import Header from '../../routes/Header/Header'
 import PrivateRoute from '../Utils/PrivateRoute'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
-import NotFoundPage from '../NotFoundPage/NotFoundPage'
+import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import LandingPage from '../../routes/LandingPage/LandingPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import ReflectionListPage from '../../routes/ReflectionListPage/ReflectionListPage'
 import EditPage from '../../routes/EditPage/EditPage'
 import FormPage from '../../routes/FormPage/FormPage'
 import HomePage from '../../routes/HomePage/HomePage'
+import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import './App.css'
 
 class App extends Component {
@@ -31,6 +32,10 @@ class App extends Component {
             <PublicOnlyRoute
               path={'/login'}
               component={LoginPage}
+            />
+            <PublicOnlyRoute
+              path={'/register'}
+              component={RegistrationPage}
             />
             <PrivateRoute
               path={'/home'}

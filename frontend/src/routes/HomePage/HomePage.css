@@ -1,18 +1,56 @@
 
 
 .HomePage{
+    padding-top: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 80vh;
 }
-h3{
+#userGreeting{
+    margin-top: 8vh;
+    font-size: 2vw;
+    
+}
+.data{
+    margin-top: 9vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.dailyChart {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.dailyChart p{
+    margin-top: 1%;
+}
+.pieChart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.averages h3{
     margin-top: 10vh;
 }
 .links{
-    margin-top: 17vh;
+    margin-top: 7vh;
+    text-align: center;
 }
 
-.averages{
-    margin-top: 4vh;
+@media screen and (min-width: 750px){
+
+    .data{
+        margin-top: 7vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
 }

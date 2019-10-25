@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-* {
+*, *:before, *:after  {
   box-sizing: border-box;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
+
 }
 
 body {
@@ -13,7 +14,7 @@ body {
   font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(41, 46, 182);
+  background-color: rgb(54, 58, 190);
   color: white;
 }
 
@@ -26,4 +27,14 @@ button {
     padding: 8px 12px;
     font-weight: bold;
   
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+a:hover{
+  color: #FFD730;
+}
+.RegistrationPage{
+  padding-top: 12vh;
 }

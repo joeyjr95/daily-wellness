@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReflectionForm component renders a ReflectionForm by default 1`] = `
+<Fragment>
+  <form
+    onSubmit={[Function]}
+  >
+    <div>
+      <label
+        htmlFor="mental_rating"
+      >
+        Rate your mental health today
+      </label>
+      <select
+        id="mental_rating"
+        name="mental_rating"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+      </select>
+    </div>
+    <div>
+      <textarea
+        cols="30"
+        id="mental_content"
+        name="mental_content"
+        placeholder="leave a description here!"
+        rows="10"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="physical_rating"
+      >
+        Rate your physical health today
+      </label>
+      <select
+        id="physical_rating"
+        name="physical_rating"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+      </select>
+    </div>
+    <div>
+      <textarea
+        cols="30"
+        id="physical_content"
+        name="physical_content"
+        placeholder="leave a description here!"
+        rows="10"
+      />
+    </div>
+    <button
+      type="submit"
+    >
+      Submit Reflection
+    </button>
+  </form>
+</Fragment>
+`;

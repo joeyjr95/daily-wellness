@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReflectionListPage component renders a .ReflectionListPage by default 1`] = `
+<Section
+  className="ReflectionsListPage"
+  list={true}
+>
+  <div>
+    <h2>
+      Archive
+    </h2>
+    <ul />
+  </div>
+</Section>
+`;
+
+exports[`ReflectionListPage component renders a Reflection for each notes in array 1`] = `<ul />`;

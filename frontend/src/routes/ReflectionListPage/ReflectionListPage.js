@@ -3,6 +3,7 @@ import WellnessContext from '../../contexts/WellnessContext'
 import WellnessApiService from '../../services/wellness-api-service'
 import { Section } from '../../components/Utils/Utils'
 import ReflectionListItem from '../../components/ReflectionListItem/ReflectionListItem'
+import './ReflectionListPage.css'
 
 export default class ReflectionListPage extends Component {
     static contextType = WellnessContext
@@ -11,7 +12,6 @@ export default class ReflectionListPage extends Component {
       }
 
     componentDidMount() {
-        this.context.clearError()
         WellnessApiService.getReflections()
             .then(this.context.setReflections)
             .catch(this.context.setError)
@@ -19,9 +19,14 @@ export default class ReflectionListPage extends Component {
 
     renderReflections() {
         const { reflections = []} = this.context
-        return reflections.map( reflection =>
+        return( 
+            <>
+            <h2 id="archive">Archive</h2>
+            <div className="ReflectionList">
+                {reflections.map( reflection =>
+                <div key={reflection.id} className='ReflectionListItem'>
             <ReflectionListItem
-                key={reflection.id}
+                
                 id={reflection.id}
                 date_created={reflection.date_created}
                 mental_rating={reflection.mental_rating}
@@ -30,6 +35,10 @@ export default class ReflectionListPage extends Component {
                 physical_content={reflection.physical_content}
                 handleClickEdit={this.handleClickEdit}
             />
+            </div>
+        )}
+        </div>
+        </>
         )
     }
     render(){

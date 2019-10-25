@@ -79,7 +79,7 @@ reflectionsRouter
       .then(reflection => {
         if(!reflection){
           return res.status(404).json({
-            error:{message: 'reflection doesn\'t exist'}
+            error: 'reflection doesn\'t exist'
           });
     
         }

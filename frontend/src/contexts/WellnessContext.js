@@ -22,18 +22,13 @@ import TokenService from '../services/token-service'
         addReflection: () => {},
         overallAverage: () => {},
         handleDeleteReflection: () => {},
-        handleLoginClick: () => {},
         handleLogoutClick: () => {},
       })
       
       export default WellnessContext
       
       export class WellnessProvider extends Component {
-        componentDidMount (){
-          if(TokenService.hasAuthToken){
-            this.setState({loggedIn: true})
-          }
-        }
+        
         state = {
           error: null,
           user: {},
@@ -43,12 +38,14 @@ import TokenService from '../services/token-service'
           loading: false,
           loggedIn: false,
         };
-
-        handleLoginClick = () =>{
-          this.setState({loggedIn: true})
+        componentDidMount (){
+          if( TokenService.hasAuthToken()){
+            this.setState({loggedIn: true})
+          }
         }
+
         handleLogoutClick = () =>{
-          localStorage.clear("wellness-client-auth-token")
+          TokenService.clearAuthToken()
           this.setState({loggedIn: false})
         }
       
@@ -72,7 +69,6 @@ import TokenService from '../services/token-service'
         }
       
         setReflections = reflections => {
-          localStorage.setItem('reflections', JSON.stringify(reflections) )
           this.setState({ reflections })
         }
         setReflection = reflection => {
@@ -114,8 +110,7 @@ import TokenService from '../services/token-service'
             clearError: this.clearError,
             setUser: this.setUser,
             setAverages: this.setAverages,
-            loggedIn: this.state.loggedIn,
-            handleLoginClick: this.handleLoginClick,
+            loggedIn: this.state.loggedIn, 
             handleLogoutClick: this.handleLogoutClick,
             setReflections: this.setReflections,
             setReflection: this.setReflection,

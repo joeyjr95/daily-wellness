@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import EditForm from '../../components/EditForm/EditForm'
 import { Section } from '../../components/Utils/Utils'
+import '../../routes/FormPage/FormPage.css'
 
 export default class FormPage extends Component {
   handleClick = () => {
-    this.props.history.push(`/reflections`)
+    this.props.history.push(`/home`)
   }
   render() {
     return (

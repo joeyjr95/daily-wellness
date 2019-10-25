@@ -5,7 +5,7 @@ import './FormPage.css'
 
 export default class FormPage extends Component {
   handleClick = () => {
-    this.props.history.push(`/reflections`)
+    this.props.history.push(`/home`)
   }
   
   render() {

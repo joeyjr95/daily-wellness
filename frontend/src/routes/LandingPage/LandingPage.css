@@ -49,13 +49,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .first-page{
+  margin-top: 6vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 92vh;
     width: 100%;
     background-image: url("https://i.imgur.com/pJlVTh6.jpg");
     background-color: rgb(156, 156, 156);
@@ -98,14 +99,48 @@
     -o-animation: fadeIn ease 7s;
     -ms-animation: fadeIn ease 7s;
 }
-
-
 .about-page{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    
 }
+.aboutPageInfo img{
+  height: 399.2px;
+  width: 766.8px;
+  border: 1px solid white;
+}
+.aboutPageInfo{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    padding-left: 30px;
+  padding-right: 30px; 
+}
+#profile{
+  display: flex;
+  flex-direction: row;
+  padding-left: 5%;
+}
+#profile p{
+  display: flex;
+  margin-right: 5%;
+  align-items: flex-start;
+}
+#form{
+  display: flex;
+  flex-direction: row;
+  padding-right: 5%;
+  margin-top: 8vh;
+}
+#form p{
+  display: flex;
+  margin-left: 5%;
+  align-items: flex-start;
+}
+
+
 .RegistrationPage{
     display: flex;
     flex-direction: column;
@@ -119,20 +154,9 @@
     flex-direction: column;
     align-items: center;
     margin-top: 8vh;
-    border: 2px solid white;
     height: 70vh;
     width: 75vw;
 }
-.Input{
-    border: 1px solid white;
-    display: block;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    padding: 10px;
-    text-align: left;
-    width: 100%;
-    border-radius: 4px;
-  }
 .full_name{
     margin-top: 2.5vh;
 }
