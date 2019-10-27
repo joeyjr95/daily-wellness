@@ -26,7 +26,7 @@ export default class LandingPage extends Component {
     <div className="aboutPageInfo">
         <div id="profile">
         <p> 
-            "How You Doin?" is an app that helps you help you. "How You Doin?" lets you keep tract of how you're doing mentally and physically daily and keeps charts on the desktop app and averages to show you how you're progressing through the week and overall time of using the app. On the homepage, you have access to their data as well as two different charts helping you visualize your day to day progress as well as your overall progress.
+        "How You Doin?" is an app that helps you help you. "How You Doin?" lets you keep track of how you're doing mentally and physically daily and keeps charts on the desktop app and averages to show you how you're progressing through the week and overall time of using the app. On the homepage, you have access to your data as well as two different charts helping you visualize your day to day progress as well as your overall progress.
         </p>
         <img src="https://i.imgur.com/LGqQAWj.png" alt="app profile" /> 
         </div>
