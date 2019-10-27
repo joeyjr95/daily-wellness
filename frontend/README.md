@@ -28,3 +28,13 @@ Users fill out a form daily to update their ratings and add descriptions to thos
 ![Form Page](https://i.imgur.com/ZI7CxMl.png "HOw You Doin Form page")
 
 ![Home Page](https://i.imgur.com/9ZCVfbX.png "HOw You Doin Home page")
+
+
+#TESTUSER
+username: testing1
+password: Testing123!
+
+#REPOS
+
+api: https://github.com/joeyjr95/daily-wellness-api
+client: https://github.com/joeyjr95/daily-wellness
