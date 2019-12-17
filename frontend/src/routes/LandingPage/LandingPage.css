@@ -80,6 +80,7 @@
     -ms-animation: fadeIn ease 7s;
     font-family: 'Sacramento', cursive;
     font-weight: 100;
+    color: white;
 }
 .first-page h3{
     margin-top: 10vh;
@@ -90,6 +91,7 @@
     -moz-animation: fadeIn ease 7s;
     -o-animation: fadeIn ease 7s;
     -ms-animation: fadeIn ease 7s;
+    color: white;
 }
 .first-page a{
     height: 10vh;
@@ -99,6 +101,8 @@
     -moz-animation: fadeIn ease 7s;
     -o-animation: fadeIn ease 7s;
     -ms-animation: fadeIn ease 7s;
+      color: white;
+  
 }
 .about-page{
     display: flex;
