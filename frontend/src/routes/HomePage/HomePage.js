@@ -32,11 +32,11 @@ export default class HomePage extends Component {
     
         let reflections = this.context.reflections
         
-        console.log(reflections)
+       
         const mentalReflections = reflections.map( reflection => {
             return { x: moment(reflection.date_created).format('ddd'), y: reflection.mental_rating }}) 
         
-        console.log(mentalReflections)
+        
         const physicalReflections = reflections.map( reflection => {
             return { x: moment(reflection.date_created).format('ddd') , y: reflection.physical_rating}})
         

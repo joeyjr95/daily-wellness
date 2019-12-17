@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './components/App/App';
 import {WellnessProvider} from './contexts/WellnessContext';
 import './index.css'
-console.log(process.env)
+
 ReactDOM.render(
    <WellnessProvider> 
     <BrowserRouter>
